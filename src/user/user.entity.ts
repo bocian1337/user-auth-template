@@ -18,7 +18,7 @@ export class User {
 
   @BeforeInsert()
   async hashPassword() {
-    const saltOrRounds = 12
+    const saltOrRounds = 12 // TODO: Change if more hashing rounds are needed
     this.password = await bcrypt.hash(this.password, saltOrRounds);
   }
 }
